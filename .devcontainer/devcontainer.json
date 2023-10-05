@@ -11,7 +11,9 @@
                 "ms-azuretools.vscode-docker",
                 "meezilla.json",
                 "valentjn.vscode-ltex",
-                "entuent.fira-code-nerd-font"
+                "entuent.fira-code-nerd-font",
+                "akamud.vscode-theme-onedark",
+                "pkief.material-icon-theme"
             ]
         }
     },
