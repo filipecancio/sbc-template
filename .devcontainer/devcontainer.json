@@ -13,7 +13,8 @@
                 "valentjn.vscode-ltex",
                 "entuent.fira-code-nerd-font",
                 "akamud.vscode-theme-onedark",
-                "pkief.material-icon-theme"
+                "pkief.material-icon-theme",
+                "tecosaur.latex-utilities"
             ]
         }
     },
