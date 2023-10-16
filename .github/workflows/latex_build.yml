@@ -10,10 +10,10 @@ jobs:
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
-          root_file: root.tex
+          root_file: article/main.tex
           args: -synctex=0 -interaction=nonstopmode --shell-escape -pdf -file-line-error
       - name: Save PDF as Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: root.pdf
-          path: root.pdf
+          name: article/main.pdf
+          path: article/main.pdf
