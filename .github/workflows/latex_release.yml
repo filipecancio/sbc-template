@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-        env:
-          NOW: $(date +'%Y-%m-%d')
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
@@ -19,13 +17,17 @@ jobs:
           working_directory: article/
           continue_on_error: true
       - name: Rename file
+        env:
+          NOW: $(date +'%Y-%m-%d')
         run: mv article/main.pdf article/artigo_versao_${{ env.NOW }}.pdf
       - name: Create Release     
         uses: "marvinpinto/action-automatic-releases@latest"
+        env:
+          NOW: $(date +'%Y-%m-%d')
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
           title: "Artigo Versao  ${{ env.NOW }}"
           files: |
-            article/artigo_versao_final.pdf
+            article/artigo_versao_${{ env.NOW }}.pdf
