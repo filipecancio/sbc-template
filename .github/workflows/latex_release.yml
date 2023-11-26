@@ -8,11 +8,10 @@ jobs:
   release_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: Set Time tag
-        env:
-          NOW: $(date +'%Y-%m-%d')
       - name: Set up Git repository
         uses: actions/checkout@v3
+        env:
+          NOW: $(date +'%Y-%m-%d')
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
