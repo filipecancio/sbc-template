@@ -1,0 +1,29 @@
+name: Build LaTeX document
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          working_directory: article/
+          continue_on_error: true
+      - name: Save PDF as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: main
+          path: article/main.pdf
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }} 
+          asset_path: article/main.pdf
+          asset_name: main.pdf
+          asset_content_type: application/pdf
