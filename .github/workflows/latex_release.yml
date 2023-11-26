@@ -16,12 +16,14 @@ jobs:
           root_file: main.tex
           working_directory: article/
           continue_on_error: true
+      - name: Rename file
+        run: mv article/main.pdf article/artigo_versao_final.pdf
       - name: Create Release     
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
-          title: "Development Build"
+          title: "Artigo Versao Final"
           files: |
-            article/main.pdf
+            article/artigo_versao_final.pdf
