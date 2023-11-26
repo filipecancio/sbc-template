@@ -8,6 +8,9 @@ jobs:
   release_latex:
     runs-on: ubuntu-latest
     steps:
+      - name: Set Time tag
+        env:
+          NOW: $(date +'%Y-%m-%d')
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
@@ -17,13 +20,13 @@ jobs:
           working_directory: article/
           continue_on_error: true
       - name: Rename file
-        run: mv article/main.pdf article/artigo_versao_final.pdf
+        run: mv article/main.pdf article/artigo_versao_${{ env.NOW }}.pdf
       - name: Create Release     
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
-          title: "Artigo Versao Final"
+          title: "Artigo Versao  ${{ env.NOW }}"
           files: |
             article/artigo_versao_final.pdf
