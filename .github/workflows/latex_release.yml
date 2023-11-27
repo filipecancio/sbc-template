@@ -19,11 +19,12 @@ jobs:
       - name: Create Release     
         run: |
             echo "BUILD_DATE=$(date +'%d-%b-%Y')" >> $GITHUB_ENV
+            echo "COMPLETE_BUILD_DATE=$(date +'%d-%b-%Y_%T')" >> $GITHUB_ENV
             mv article/main.pdf article/artigo.pdf
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ env.BUILD_DATE }}"
+          automatic_release_tag: "${{ env.COMPLETE_BUILD_DATE }}"
           prerelease: false
           title: "Artigo Versao ${{ env.BUILD_DATE }}"
           files: |
