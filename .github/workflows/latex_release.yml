@@ -18,13 +18,13 @@ jobs:
           continue_on_error: true
       - name: Rename file
         run: echo "BUILD_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV \
-             && mv article/main.pdf article/artigo_versao_${{ env.NOW }}.pdf
+             && mv article/main.pdf article/artigo_versao_${{ env.BUILD_DATE }}.pdf
       - name: Create Release     
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
-          title: "Artigo Versao  ${{ env.NOW }}"
+          title: "Artigo Versao  ${{ env.BUILD_DATE }}"
           files: |
-            article/artigo_versao_${{ env.NOW }}.pdf
+            article/artigo_versao_${{ env.BUILD_DATE }}.pdf
