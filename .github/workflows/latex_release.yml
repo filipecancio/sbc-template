@@ -17,10 +17,8 @@ jobs:
           working_directory: article/
           continue_on_error: true
       - name: Rename file
-        id: date
-        env:
-          NOW: $(date +'%Y-%m-%d')
-        run: mv article/main.pdf article/artigo_versao_${{ env.NOW }}.pdf
+        run: echo "BUILD_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV \
+             && mv article/main.pdf article/artigo_versao_${{ env.NOW }}.pdf
       - name: Create Release     
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
