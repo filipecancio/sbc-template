@@ -23,7 +23,7 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ env.BUILD_DATE }}"
           prerelease: false
           title: "Artigo Versao ${{ env.BUILD_DATE }}"
           files: |
