@@ -19,7 +19,7 @@ jobs:
       - name: Create Release     
         run: |
             echo "BUILD_DATE=$(date +'%d-%b-%Y')" >> $GITHUB_ENV
-            mv article/main.pdf article/artigo_versao_${{ env.BUILD_DATE }}.pdf
+            mv article/main.pdf article/artigo_versao_$BUILD_DATE.pdf
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
