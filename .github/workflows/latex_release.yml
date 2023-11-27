@@ -23,8 +23,6 @@ jobs:
         run: mv article/main.pdf article/artigo_versao_${{ env.NOW }}.pdf
       - name: Create Release     
         uses: "marvinpinto/action-automatic-releases@latest"
-        env:
-          NOW: $(date +'%Y-%m-%d')
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
