@@ -27,4 +27,4 @@ jobs:
           prerelease: false
           title: "Artigo Versao  ${{ env.BUILD_DATE }}"
           files: |
-            article/artigo_versao_${{ env.BUILD_DATE }}.pdf
+            *.pdf
