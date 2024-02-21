@@ -28,10 +28,10 @@
         "**/*.run.xml": true,
         "**/*.acn": true,
         "**/*.glo": true,
-        "**/*.ist": true
+        "**/*.ist": true,
+        "**/*.gz": true
     },
     "editor.wordWrap": "bounded",
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "nickfode.latex-formatter",
     "spellright.language": [
         "en"
