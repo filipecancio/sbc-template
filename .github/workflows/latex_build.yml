@@ -1,5 +1,8 @@
 name: Build LaTeX document
-on: pull_request
+on:
+  workflow_run:
+    workflows: ["PR"]
+    types: [completed]
 
 jobs:
   build_latex:
