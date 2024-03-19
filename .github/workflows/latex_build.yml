@@ -22,6 +22,11 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: main
+
+  artifacts-url-comments:
+    name: add artifact links to pull request and related issues job
+    runs-on: windows-2019
+    steps:
       - name: comment PR
         uses: tonyhallett/artifacts-url-comments@v1.1.0
         env:
