@@ -27,5 +27,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `👋 Aqui está uma nova versão do artigo em PDF: [link](${artifactUrl})`
+              body: `👋 Aqui está uma nova versão do artigo em PDF: [link](${artifactUrl})\n|Commit|Data de lançamento|\n\n|---|---|\n|${context.sha}|${new Date().toISOString()}|`
             })
