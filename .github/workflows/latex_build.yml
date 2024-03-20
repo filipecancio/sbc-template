@@ -23,9 +23,19 @@ jobs:
         with:
           script: |
             const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const commitMessage = context.payload.head_commit.message.split('\n')[0];
+            const formatDate = (date) => {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+            const year = date.getFullYear();
+
+            return day + '/' + month + '/' + year;
+            }
+
+            const currentDate = formatDate(new Date());
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `👋 Aqui está uma nova versão do artigo em PDF: [link](${artifactUrl})\n|Commit|Data de lançamento|\n|---|---|\n|${context.payload.head_commit.message}|${new Date().toISOString()}|`
+              body: `👋 Aqui está uma nova versão do artigo em PDF: [link](${artifactUrl})\n|Commit|Data de lançamento|\n|---|---|\n|${commitMessage}|${currentDate}|`
             })
