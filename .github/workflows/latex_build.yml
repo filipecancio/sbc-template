@@ -22,11 +22,10 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const artifactId = steps['get-artifact-id'].outputs.result;
             const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `👋 Thanks for reporting! Here is your [artifact](${artifactUrl})`
+              body: `👋 Aqui está uma nova versão do artigo em PDF: [link](${artifactUrl})`
             })
