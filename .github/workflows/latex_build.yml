@@ -1,7 +1,6 @@
 name: Build LaTeX document
 on:
-  workflow_run:
-    workflows: ["PR"]
+  pull_request:
     types: [edited]
 
 jobs:
