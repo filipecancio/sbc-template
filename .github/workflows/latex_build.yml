@@ -32,8 +32,10 @@ jobs:
               repo: context.repo.repo,
               run_id: process.env.GITHUB_RUN_ID
             });
-            const artifact = artifacts.data.artifacts.find(a => a.name === 'main');
-            return artifact.id;
+            if (artifacts.data.artifacts.length === 0) {
+              throw new Error('No artifacts found');
+            }
+            return artifacts.data.artifacts[0].id;
       - name: comment PR
         uses: actions/github-script@v6
         with:
