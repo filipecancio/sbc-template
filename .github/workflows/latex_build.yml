@@ -18,27 +18,12 @@ jobs:
         with:
           name: main
           path: article/main.pdf
-      - name: Get artifact ID
-        id: get-artifact-id
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              run_id: process.env.GITHUB_RUN_ID
-            });
-             console.log(artifacts.data);
-            if (artifacts.data.artifacts.length === 0) {
-              throw new Error('No artifacts found');
-            }
-            return artifacts.data.artifacts[0].id;
       - name: comment PR
         uses: actions/github-script@v6
         with:
           script: |
             const artifactId = steps['get-artifact-id'].outputs.result;
-            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}/artifacts/${artifactId}`;
+            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
