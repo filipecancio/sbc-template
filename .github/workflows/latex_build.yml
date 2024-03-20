@@ -1,9 +1,5 @@
 name: Build LaTeX document
-on:
-  push:
-    branches:
-      - '*'
-      - '!main'
+on: pull_request
 
 jobs:
   build_latex:
@@ -22,3 +18,17 @@ jobs:
         with:
           name: main
           path: article/main.pdf
+      - name: Display structure of downloaded files
+        run: ls -R
+      - name: comment PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const currentDate = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `👋 Aqui está uma nova versão do artigo em PDF: [link](${artifactUrl}). Lançado em ${currentDate}.`
+            })
