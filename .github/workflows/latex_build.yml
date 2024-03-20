@@ -24,7 +24,23 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const axios = require('axios');
+            const jq = require('jq-web');
+
+            const getArtifactUrl = async () => {
+              const response = await axios.get(`https://api.github.com/repos/${context.repo.owner}/${context.repo.repo}/actions/artifacts?per_page=100`, {
+                headers: {
+                  'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                  'Accept': 'application/vnd.github.v3+json'
+                }
+              });
+
+              const artifacts = jq.json(response.data, '[.artifacts[] | {name : .name, archive_download_url : .archive_download_url}]');
+              const artifact = artifacts.find(artifact => artifact.name === 'main');
+              return artifact ? artifact.archive_download_url : '';
+            }
+
+            const artifactUrl = await getArtifactUrl();
             const currentDate = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
             github.rest.issues.createComment({
               issue_number: context.issue.number,
