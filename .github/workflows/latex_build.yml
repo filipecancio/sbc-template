@@ -1,8 +1,5 @@
 name: Build LaTeX document
-on:
-  workflow_run:
-    workflows: ["PR"]
-    types: [edited, synchronize]
+on: pull_request
 
 jobs:
   build_latex:
@@ -31,11 +28,12 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: comment PR
-        uses: tonyhallett/artifacts-url-comments@v1.1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/github-script@v6
         with:
-          prefix: Segue o pdf
-          suffix: Valeo
-          format: name
-          addTo: pullandissues
+          script: |
+            github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '👋 Thanks for reporting!'
+            })
