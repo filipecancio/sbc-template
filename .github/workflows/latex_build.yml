@@ -18,10 +18,6 @@ jobs:
         with:
           name: main
           path: article/main.pdf
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: main
       - name: Display structure of downloaded files
         run: ls -R
       - name: comment PR
