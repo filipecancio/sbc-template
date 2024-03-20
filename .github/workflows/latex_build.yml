@@ -22,11 +22,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: main
-
-  artifacts-url-comments:
-    name: add artifact links to pull request and related issues job
-    runs-on: windows-2019
-    steps:
       - name: comment PR
         uses: actions/github-script@v6
         with:
