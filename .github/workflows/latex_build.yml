@@ -18,10 +18,6 @@ jobs:
         with:
           name: main
           path: article/main.pdf
-      - name: download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: main
       - name: Get artifact ID
         id: get-artifact-id
         uses: actions/github-script@v6
