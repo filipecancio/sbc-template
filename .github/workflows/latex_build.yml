@@ -26,9 +26,10 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}/artifacts/main`;
             github.rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: '👋 Thanks for reporting!'
+            body: `👋 Thanks for reporting! Here is your [artifact](${artifactUrl})`
             })
