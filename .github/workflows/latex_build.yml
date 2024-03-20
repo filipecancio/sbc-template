@@ -18,6 +18,12 @@ jobs:
         with:
           name: main
           path: article/main.pdf
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: comment PR
         uses: actions/github-script@v6
         with:
