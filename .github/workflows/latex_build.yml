@@ -33,7 +33,7 @@ jobs:
               return day + '/' + month + '/' + year + ' ' + hours + ':' + minutes;
             }
 
-            const currentDate = formatDate(new Date());
+            const currentDate = formatDate(new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"}));
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
