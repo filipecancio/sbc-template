@@ -11,6 +11,11 @@ Repositório base para template de artigo tcc em Tex baseado no modelo da SBC - 
 ## Video aulas
 Caso você queria um passo a passo em vídeo de como usar o repositório, verá logo abaixo uma playlist do youtube com cada instrução em ordem:  [🔗 link da playlist conpleta no youtube](https://www.youtube.com/playlist?list=PLgjaS9jgnIzkE7ub4bSdEKbsYj19ZxfwZ)
 - 01: Clonando o repositório [🔗 link do youtube](https://youtu.be/9xrLT7bl3zs)
+
+
+https://github.com/filipecancio/sbc-template/assets/13178261/65d12528-0438-476e-b6c4-4f0e56108ea9
+
+
 - 02: Criando versões de release [🔗 link do youtube](https://youtu.be/pjIIR51WXSk)
 - 03: Abrindo o projeto no codespaces [🔗 link do youtube](https://youtu.be/95DuP4wMkgI)
 - 04: Abrindo o projeto no computador [🔗 link do youtube](https://youtu.be/2dwTHC7rIwc)
