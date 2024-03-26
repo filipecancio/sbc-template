@@ -35,6 +35,12 @@ https://github.com/filipecancio/sbc-template/assets/13178261/5f999993-2598-4057-
 https://github.com/filipecancio/sbc-template/assets/13178261/502efbd3-2a40-41ae-bea0-90c0e4d74ff8
 
 - 07: Alterando os arquivos latex [🔗 link do youtube](https://youtu.be/W0O7h-AALXQ)
+
+
+https://github.com/filipecancio/sbc-template/assets/13178261/7e64016b-d7e9-4011-8646-0219363513e9
+
+
+
 - 08: Criando novas imagens (⚠️Ainda não tem viídeo)
 - 09: Criando novas tabelas (⚠️Ainda não tem viídeo)
 - 10: Criando novas referências (⚠️Ainda não tem viídeo)
