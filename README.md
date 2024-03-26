@@ -16,12 +16,15 @@ https://github.com/filipecancio/sbc-template/assets/13178261/65d12528-0438-476e-
 
 - 02: Criando versões de release [🔗 link do youtube](https://youtu.be/pjIIR51WXSk)
 
-  
-
 https://github.com/filipecancio/sbc-template/assets/13178261/eae7fd70-57b5-4aba-b2dc-75c738b99482
 
-
 - 03: Abrindo o projeto no codespaces [🔗 link do youtube](https://youtu.be/95DuP4wMkgI)
+
+  
+
+https://github.com/filipecancio/sbc-template/assets/13178261/451e26ae-1db0-47d7-84cb-168f82db0dcd
+
+
 - 04: Abrindo o projeto no computador [🔗 link do youtube](https://youtu.be/2dwTHC7rIwc)
 - 05: Explicando o fluxo de desenvolvimento [🔗 link do youtube](https://youtu.be/OO61ZRpnQFo)
 - 06: Criando um pull request [🔗 link do youtube](https://youtu.be/auHE0sUdpMI)
