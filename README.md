@@ -28,12 +28,12 @@ https://github.com/filipecancio/sbc-template/assets/13178261/8dc18d2e-b5cd-4850-
 
 - 05: Explicando o fluxo de desenvolvimento [🔗 link do youtube](https://youtu.be/OO61ZRpnQFo)
 
-
 https://github.com/filipecancio/sbc-template/assets/13178261/5f999993-2598-4057-bf4c-443ec178bd62
-
-
   
 - 06: Criando um pull request [🔗 link do youtube](https://youtu.be/auHE0sUdpMI)
+
+https://github.com/filipecancio/sbc-template/assets/13178261/502efbd3-2a40-41ae-bea0-90c0e4d74ff8
+
 - 07: Alterando os arquivos latex [🔗 link do youtube](https://youtu.be/W0O7h-AALXQ)
 - 08: Criando novas imagens (⚠️Ainda não tem viídeo)
 - 09: Criando novas tabelas (⚠️Ainda não tem viídeo)
